@@ -1,16 +1,16 @@
 /* style.css */
 
+/* Image arrière plan */
+
 /* Couleur du titre */
 h1 {
     color: #3366ff; /* Exemple de couleur bleue */
 }
 
-/* Marges */
-body {
-    margin: 20px; /* Exemple de marges de 20px autour du corps */
-}
 
-/* Couleur des fonds */
 body {
-    background-color: #f0f0f0; /* Exemple de couleur de fond grise */
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px; /* Exemple de marges de 20px autour du corps */
+    background-image: url("img/background.jpg");
+    background-size: 1900px;
 }
