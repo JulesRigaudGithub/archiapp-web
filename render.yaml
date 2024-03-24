@@ -1,0 +1,18 @@
+services:
+  - type: web
+    runtime: static
+    name: archiapp-web-front
+    repo: https://github.com/JulesRigaudGithub/archiapp-web.git
+    branch: main
+    buildCommand: 
+    staticPublishPath: ./frontend
+    plan: free
+
+  - type: web
+    runtime: node
+    name: archiapp-web-back
+    repo: https://github.com/JulesRigaudGithub/archiapp-web.git
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
