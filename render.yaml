@@ -6,7 +6,6 @@ services:
     branch: main
     buildCommand: 
     staticPublishPath: ./frontend
-    plan: free
 
   - type: web
     runtime: node
