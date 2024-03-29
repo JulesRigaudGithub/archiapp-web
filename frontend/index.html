@@ -3,44 +3,24 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>repl.it</title>
+  <link rel="icon" href="img/logo.ico" type="image/x-icon">
   <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-  <h1>
-    Mon titre
-  </h1>
+
+  <div class="container">
+    <h1>Zen messages</h1>
+    
+    <ul id="messages" class="messages"></ul>
   
-  <ul id="messages">
-    <li>
-      Message 1
-    </li>
-    <li>
-      Message 2
-    </li>
-    <li>
-      Message 3
-    </li>
-    <li>
-      Message 4
-    </li>
-    <li>
-      Message 5
-    </li> 
-  </ul>
+    <textarea id="input" placeholder="Ecrivez votre message"></textarea>
 
-  <textarea>  
-  </textarea>
-
-  <br/>
-
-  <button id="button-send">
-    Envoyer
-  </button>
-  
-<script src="script.js"></script>
+    <button id="send" type="submit">Envoyer</button>
+  </div>
+  <script src="script.js"></script>
 </body>
 
 </html>

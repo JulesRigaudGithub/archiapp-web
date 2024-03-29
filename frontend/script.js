@@ -1,7 +1,7 @@
 msgs = [
     { "msg": "Hello World" },
     { "msg": "Blah Blah" },
-    { "msg": "I love cats" }
+    { "msg": "I love cats and everything is fine up until now, this message is now quite long" }
   ];
   
 function update(tab) {
@@ -15,6 +15,6 @@ for (var i = 0; i < tab.length; i++) {
 console.log(ul)
 }
 
-const button = document.getElementById("button-send");
+const button = document.getElementById("send");
 
 button.addEventListener("click", () => update(msgs));
