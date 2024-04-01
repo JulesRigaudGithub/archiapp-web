@@ -1,5 +1,5 @@
 const serverName = "archiapp-web-back.onrender.com:8080";
-const serverURL = "http://"+serverName;
+const serverURL = "https://"+serverName;
 const websocketURL = "wss://"+serverName;
 
 function main() {  
