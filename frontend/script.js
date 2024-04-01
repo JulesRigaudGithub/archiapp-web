@@ -1,4 +1,4 @@
-const serverName = "archiapp-web-back.onrender.com:10000";
+const serverName = "archiapp-web-back.onrender.com";
 const serverURL = "https://"+serverName;
 const websocketURL = "wss://"+serverName;
 
