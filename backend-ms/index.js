@@ -1,5 +1,11 @@
-var express = require('express'); //import de la bibliothèque Express
+const express = require('express'); //import de la bibliothèque Express
+const bodyParser = require('body-parser');
+
 var app = express(); //instanciation d'une application Express
+
+// const http = require('http');
+// const WebSocket = require('ws');
+
 const port = 8080;
 
 // Pour s'assurer que l'on peut faire des appels AJAX au serveur
@@ -9,7 +15,18 @@ app.use(function(req, res, next) {
   next();
 });
 
+// Ici il n'y a pas besoin de gérer application/json mais seulement un type text/plain
+app.use(bodyParser.text());
+
 var allMsgs = ["Hello World", "foobar", "CentraleSupelec Forever"];
+
+app.post("/msg/post", (req, res) => {
+  const msg = req.body;
+
+  allMsgs.push(msg);
+
+  res.json({"code" : 1});
+});
 
 app.get("/msg/get/*", function(req, res) {
   var msg_idx_str = req.url.substr(9);
@@ -19,7 +36,7 @@ app.get("/msg/get/*", function(req, res) {
     if (msg_idx < allMsgs.length && msg_idx >= 0) {
       res.json({
         "code": 1,
-        "mdg": allMsgs[msg_idx]
+        "msg": allMsgs[msg_idx]
       });
     } else {
       res.json({
@@ -34,18 +51,25 @@ app.get("/msg/get/*", function(req, res) {
 });
 
 app.get("/msg/nber", (req, res) => {
-  res.json(allMsgs.length);
+  res.json({
+    "code" : 1,
+    "nber" : allMsgs.length});
 });
 
 app.get("/msg/getAll", (req, res) => {
-  res.json(allMsgs);
+  res.json({
+    "code" : 1,
+    "msgs" : allMsgs
+  });
 });
 
-app.get("/msg/post/*", (req, res) => {
-  var msg = unescape(req.url.substr(10));
-  allMsgs.push(msg);
-  res.json(allMsgs.length - 1);
+app.get("/msg/delAll", (req, res) => {
+  allMsgs = [];
+  res.json({
+    "code" : 1
+  });
 });
+
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}...`);
