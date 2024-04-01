@@ -6,7 +6,7 @@ var app = express(); //instanciation d'une application Express
 // const http = require('http');
 // const WebSocket = require('ws');
 
-const port = 8080;
+const port = 10000;
 
 // Pour s'assurer que l'on peut faire des appels AJAX au serveur
 app.use(function(req, res, next) {
