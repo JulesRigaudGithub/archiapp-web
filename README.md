@@ -14,3 +14,13 @@ The zip archives are available on this repo under the archive folder as well. Th
 The deployement is feasible with render blueprints, which is Infrastructure as Code. All the requirements for the static webfront and Node microservice are written in the yaml file.
 
 The[ site is available here ](https://archiapp-web-front.onrender.com/).
+
+## Features list
+
+1. Can publish any length message with POST request
+2. Possibility to delete the whole list of messages on the server
+3. Very zen interface
+4. Automatic deploy uppon push with Render connected to Github
+5. Render services as code in the YAML file
+6. [**TODO**] Implement websocket to avoid loading messages at button click
+7. [**TODO**] Implement image transfer
